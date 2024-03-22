@@ -1,0 +1,243 @@
+@import url("reset.css");
+@import url("root.css");
+
+/* #page_root::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--y, 0) * 1px);
+    left: calc(var(--x, 0) * 1px);
+    width: 1500px;
+    height: 1500px;
+    background: radial-gradient(rgba(255, 255, 255, 0.05), #3984ff00 50%);
+  
+    opacity: 0;
+    transition: opacity 0.2s; 
+}
+#page_root:hover::after {
+    opacity: 0.4;
+} */
+.page_container{
+    max-width: 1920px;
+    margin: auto;
+}
+
+/* used to style content so it fits into one screen minimum */
+.screen_container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thin_content_container {
+    width: 40rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Main content of container.
+ *
+ * Class "screen_container" expects a single element inside it with this
+ * class, as it'll center it horizontally and vertically.
+ * If you want to put more than one element inside a screen_container, you'll
+ * have to change it's position property so it doesn't interact with sibling
+ * elements (i.e. probably use position: absolute)
+ */
+.screen_container_main_content {
+}
+
+@media (max-width:960px) {
+    .screen_container {
+        min-height: 60vh;
+    }
+
+    /* landing page keeps full height because it's special!!! */
+    #first_screen_container {
+        min-height: 100vh !important; 
+    }
+}
+
+.quiet_text{
+    color: var(--color-text-quiet);
+}
+
+#top_navigation_bar {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100vw;
+    max-width: 1920px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(20px) brightness(20%);
+    z-index: 100;
+    opacity: 0;
+}
+
+#top_navigation_bar.scroll_up {
+    /* top: 0vh; */
+    transition: 0.3s ease-in;
+    opacity: 1;
+}
+
+#top_navigation_bar.scroll_down {
+    /* top: -25vh; */
+    transition: 0.3s ease-in;
+    opacity: 0;
+}
+
+#top_navigation_bar ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+}
+
+#top_navigation_bar ul li {
+    list-style: none;
+    display: block;
+    margin: 10px 0.5rem;
+}
+#top_navigation_bar ul li a,
+#top_navigation_bar ul li p {
+    text-decoration: none;
+    color: var(--color-text-secondary);
+}
+
+#top_navigation_bar ul li a:hover {
+    transition: 0.2s;
+    color: var(--color-text);
+}
+
+/* WINDOW 1 - LANDING SCREEN */
+
+#landing_content {
+    animation: FirstWindow_fadeInAnimation 800ms ease-out forwards;
+}
+#landing_content h1 {
+    font-size: max(4.5vw, var(--h1-font-size));
+    text-align: center;
+}
+
+#landing_content p {
+    font-size: max(1vw, var(--p-font-size));
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+@keyframes FirstWindow_fadeInAnimation {
+    0% {
+        position: relative;
+        opacity: 0;
+        transform: translateY(-65%);
+    }
+    50% {
+        position: relative;
+        transform: translateY(-65%);
+        opacity: 0;
+    }
+    100% {
+        position: relative;
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
+
+#down_arrow{
+    position: fixed;
+    animation:
+        downArrow_fadeInAnimation 2500ms linear,
+        itemFloatHover 2s ease-in-out infinite;
+    text-align: center;
+    bottom: calc(-50vh + 30px);
+    width: 100%;
+}
+
+#down_arrow.fade_out{
+    animation:
+        downArrow_fadeOutAnimation 300ms linear forwards,
+        itemFloatHover ease-in-out infinite;
+}
+
+@keyframes itemFloatHover {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+@keyframes downArrow_fadeInAnimation {
+    0% {
+        opacity: 0;
+        -ms-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    60% {
+        opacity: 0;
+        -ms-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes downArrow_fadeOutAnimation {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* WINDOW 2 - ABOUT SCREEN */
+
+#about_me_content {
+    display: flex;
+    max-width: min(1200px, 80vw);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+#about_me_content div{
+    margin: 5vh;
+}
+
+#about_me_content #about_me_1 {
+    flex: 33;
+    max-width: min(500px, 30vw);
+}
+
+#about_me_content #about_me_1 img {
+    padding: 0.625em;
+    border: 2px solid var(--color-text-quiet);
+}
+
+#about_me_content #about_me_2 {
+    flex: 66;
+}
+
+@media (max-width:960px) {
+    #about_me_content {
+        display: block;
+    }
+    #about_me_content #about_me_1 {
+        flex: 33;
+        max-width: min(100%, 350px);
+        margin: auto;
+    }
+    #about_me_content #about_me_1 img {
+        padding: 0;
+        border: 0;
+    }
+    #about_me_content #about_me_2 {
+        margin: 0;
+        margin-top: 2rem;
+    }
+    
+}
+
+/* FOOTER - LANDING SCREEN */
+
+footer {
+    text-align: center;
+}
