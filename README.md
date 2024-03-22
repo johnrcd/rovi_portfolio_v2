@@ -2,4 +2,4 @@
 
 This is the repository for version 2 of my portfolio website. Coded in vanilla HTML, CSS, and JavaScript, just because I wanted to.
 
-Hosted at (rovidecena.com/portfolio)[rovidecena.com/portfolio]. 
+Hosted at [https://www.rovidecena.com/portfolio](https://www.rovidecena.com/portfolio), though they may not always be in sync.
