@@ -124,3 +124,10 @@ a:hover {
 img {
     width: 100%;
 }
+
+hr, br {
+    border-top: 1px solid;
+    border-color: var(--color-text-quiet);
+    background-color: var(--color-text-quiet);
+    color: var(--color-text-quiet);
+}

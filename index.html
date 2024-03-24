@@ -13,26 +13,26 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <body>
+<header>
+    <nav id="top_navigation_bar">
+        <ul>
+            <li><p>&#91;</p></li>
+            <li><a href="#landing" >home,</a></li>
+            <li><a href="#about_me">about,</a></li>
+            <li><a href="#projects">projects,</a></li>
+            <li><a href="#contact" >contact</a></li>
+            <li><p>&#93;</p></li>
+        </ul>
+    </nav>
+</header>
 <div class="page_container" id="page_root">
-    <header>
-        <nav id="top_navigation_bar">
-            <ul>
-                <li><p>&#91;</p></li>
-                <li><a href="#landing" >home,</a></li>
-                <li><a href="#about_me">about,</a></li>
-                <li><a href="#projects">projects,</a></li>
-                <li><a href="#contact" >contact</a></li>
-                <li><p>&#93;</p></li>
-            </ul>
-        </nav>
-    </header>
     <div id="landing"></div>
     <div id="first_screen_container" class="screen_container">
         <div
             class="screen_container_main_content"
             id="landing_content"
         >
-            <h1>Hey, I'm Rovi Decena.</h1>
+          <h1>Hey, I'm Rovi Decena.</h1>
             <p class="quiet_text">I write code for apps, websites, and games.</p>
             <h4 id="down_arrow">v</h4>
         </div>
@@ -46,7 +46,7 @@
             <div id="about_me_1">
                 <img id="about_me_selfie" src="images/rovi.jpg" alt="picture of me (rovi decena)">
             </div>
-            <div id="about_me_2">
+            <div id="about_me_2" class="center_header_text">
                 <h2>about me</h2>
                 <hr/>
                 <p>
@@ -73,14 +73,100 @@
             </div>
         </div>
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <div id="projects"></div>
     <div class="screen_container">
         <div
             class="screen_container_main_content"
             id="projects_container"
         >
-        <h2>projects</h2>
-        <hr/>
+            <div id="projects_header">
+                <div>
+                    <h2>projects i've worked on</h2>   
+                    <hr/>
+                </div>
+            </div>
+            <br/>
+            <section class="project_card">
+                <div class="project_card_img">
+                    <img
+                        src="images/portfolio_monospace.png"
+                        alt="picture of me (rovi decena)"
+                    />
+                </div>
+                <div class="project_card_content">
+                    <h3>Monospace</h3>
+                    <hr/>
+                    <p>
+                        A 2D platformer about a mouse trying to get home.
+                        Developed over a period of five months, released
+                        for Slow Jam Winnipeg 2022.
+                    </p>
+                    <br/>
+                    <ul class="project_tech_list">
+                        <li>Unity</li>
+                        <li>C#</li>
+                        <li>Plastic SCM</li>
+                    </ul>
+                </div>
+            </section>
+            <br/>
+            <br/>
+            <br/>
+            <section class="project_card flex_row_order_flip">
+                <div class="project_card_img">
+                    <img
+                        src="images/rovi.jpg"
+                        alt="picture of me (rovi decena)"
+                    />
+                </div>
+                <div class="project_card_content">
+                    <h3>Valorant LFG</h3>
+                    <hr/>
+                    <p>
+                        Website to find players to play Valorant with. Users
+                        can find other players by agent, weapon, or role
+                        preference. Additionally, users can register to add
+                        themselves to the database, providng their own
+                        Valorant details and gameplay information.
+                    </p>
+                    <br/>
+                    <ul class="project_tech_list">
+                        <li>HTML</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>Apache</li>
+                    </ul>
+                </div>
+            </section>
+            <br/>
+            <br/>
+            <br/>
+            <section class="project_card">
+                <div class="project_card_img">
+                    <img
+                        src="images/rovi.jpg"
+                        alt="picture of me (rovi decena)"
+                    />
+                </div>
+                <div class="project_card_content">
+                    <h3>Instalocked Inc.</h3>
+                    <hr/>
+                    <p>
+                        Static webpage built as a joke from the game Valorant
+                        Originally built using pure HTML/CSS, recreated with
+                        React to help myself get familier with the framework.
+                    </p>
+                    <br/>
+                    <ul class="project_tech_list">
+                        <li>React</li>
+                        <li>Vite</li>
+                    </ul>
+                </div>
+            </section>
         </div>
     </div>
     <div class="screen_container">

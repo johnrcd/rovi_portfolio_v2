@@ -48,7 +48,7 @@
 
 @media (max-width:960px) {
     .screen_container {
-        min-height: 60vh;
+        min-height: 100vh;
     }
 
     /* landing page keeps full height because it's special!!! */
@@ -65,7 +65,7 @@
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100vw;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: auto;
     display: flex;
     align-items: center;
@@ -234,6 +234,102 @@
         margin-top: 2rem;
     }
     
+}
+
+/* WINDOW 3 - PROJECTS */
+
+#projects_header {
+    display: flex;
+    justify-content:center;
+}
+#projects_header div{
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+}
+#projects_header div h2 {
+    text-align: center;
+    margin: 0 2rem;
+}
+
+.project_card {
+    display: flex;
+    max-width: min(800px, 80vw);
+    /* max-width: 20rem; */
+    padding: 0.625em;
+    /* border: 2px solid var(--color-text-quiet); */
+    border-radius: 10px;
+    gap: 1rem;
+    /* https://stackoverflow.com/a/10995287 */
+    transition:         0.2s linear; /* vendorless fallback */
+    -o-transition:      0.2s linear; /* opera */
+    -ms-transition:     0.2s linear; /* IE 10 */
+    -moz-transition:    0.2s linear; /* Firefox */
+    -webkit-transition: 0.2s linear; /* safari and chrome */
+}
+
+.project_card:hover {
+    /* thank you to this person: */
+    /* https://stackoverflow.com/a/13517809 */
+    -webkit-box-shadow:inset 0px 0px 0px 2px var(--color-img-border);
+    -moz-box-shadow:   inset 0px 0px 0px 2px var(--color-img-border);
+    box-shadow:        inset 0px 0px 0px 2px var(--color-img-border);
+}
+/* .project_card: */
+
+.project_card .project_card_img {
+    flex: 25;
+    max-width: min(500px, 30vw);
+    object-fit: cover;
+    aspect-ratio: calc(1 / 1); 
+}
+
+.project_card .project_card_content {
+    flex: 75;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.flex_row_order_flip {
+    flex-direction: row-reverse;
+}
+
+
+/* #about_me_content #about_me_1 {
+    flex: 33;
+    max-width: min(500px, 30vw);
+}
+
+#about_me_content #about_me_1 img {
+    padding: 0.625em;
+    border: 2px solid var(--color-text-quiet);
+}
+
+#about_me_content #about_me_2 {
+    flex: 66;
+} */
+
+
+.project_tech_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.project_tech_list li {
+    font-size: 0.875rem;
+    background-color: var(--color-bg-secondary);
+    /* border: 2px solid var(--color-accent); */
+    border-radius: 4px;
+    margin: 0rem;
+    padding: 0.25rem;
+}
+
+
+.project_tech_list li:not(:first-child) {
+    /* margin-left: 0.25rem; */
 }
 
 /* FOOTER - LANDING SCREEN */
