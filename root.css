@@ -131,3 +131,20 @@ hr, br {
     background-color: var(--color-text-quiet);
     color: var(--color-text-quiet);
 }
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-text-quiet);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text);
+}
