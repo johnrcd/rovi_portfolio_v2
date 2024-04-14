@@ -1,21 +1,6 @@
 @import url("reset.css");
 @import url("root.css");
 
-/* #page_root::after {
-    content: "";
-    position: absolute;
-    top: calc(var(--y, 0) * 1px);
-    left: calc(var(--x, 0) * 1px);
-    width: 1500px;
-    height: 1500px;
-    background: radial-gradient(rgba(255, 255, 255, 0.05), #3984ff00 50%);
-  
-    opacity: 0;
-    transition: opacity 0.2s; 
-}
-#page_root:hover::after {
-    opacity: 0.4;
-} */
 .page_container{
     max-width: 1920px;
     margin: auto;
@@ -27,34 +12,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .thin_content_container {
     width: 40rem;
     max-width: 1000px;
     margin: auto;
-}
-
-/* Main content of container.
- *
- * Class "screen_container" expects a single element inside it with this
- * class, as it'll center it horizontally and vertically.
- * If you want to put more than one element inside a screen_container, you'll
- * have to change it's position property so it doesn't interact with sibling
- * elements (i.e. probably use position: absolute)
- */
-.screen_container_main_content {
-}
-
-@media (max-width:960px) {
-    .screen_container {
-        min-height: 100vh;
-    }
-
-    /* landing page keeps full height because it's special!!! */
-    #first_screen_container {
-        min-height: 100vh !important; 
-    }
 }
 
 .quiet_text{
@@ -65,7 +29,6 @@
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100vw;
-    /* max-width: 1920px; */
     margin: auto;
     display: flex;
     align-items: center;
@@ -107,6 +70,35 @@
 #top_navigation_bar ul li a:hover {
     transition: 0.2s;
     color: var(--color-text);
+}
+
+#top_navigation_bar div {
+    /* margin: auto 10px; */
+    color: var(--color-text-quiet);
+    width: 20vw;
+    text-decoration: none;
+}
+
+#top_navigation_bar .side_option:hover {
+    transition: 0.2s;
+    color: var(--color-text);
+}
+
+#nav_email {
+    margin-left: calc(10px + 0.25rem);
+}
+#nav_twt {
+    text-align: right;
+}
+
+#nav_twt a {
+    margin-right: calc(10px + 0.25rem);
+}
+
+@media (max-width:960px) {
+    #top_navigation_bar .side_option{
+        display: none;
+    }
 }
 
 /* WINDOW 1 - LANDING SCREEN */
@@ -273,7 +265,7 @@
 }
 #projects_header div h2 {
     text-align: center;
-    margin: 0 2rem;
+    /* margin: 0 2rem; */
 }
 
 .project_card {
@@ -356,8 +348,66 @@
     /* margin-left: 0.25rem; */
 }
 
+
+/* WINDOW 4 - CONTACT */
+
+#contact_content{
+    margin: 5vh;
+    max-width: min(25em, 80vw);
+}
+
+#contact_header {
+    display: flex;
+    justify-content:center;
+}
+#contact_header div{
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+}
+#contact_header div h2 {
+    text-align: center;
+}
+
+div.social_media_icons {
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    margin: auto;
+    width: calc(128px + 40px);
+}
+div.social_media_icons a.social_media_link img.social_media_icon {
+    width: 32px;
+    opacity: 0.6;
+    transition: 0.22s;
+}
+
+div.social_media_icons a.social_media_link img.social_media_icon:hover {
+    width: 32px;
+    opacity: 1;
+}
+p.social_media_text{
+    text-align: center;
+}
+
+@media (max-width:960px) {
+    #contact_header div h2{
+        display: block;
+        width: 100%;
+    } 
+}
+
 /* FOOTER - LANDING SCREEN */
 
 footer {
+    position: absolute;
     text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 20px;
+    width: 100%;
+}
+
+footer p {
+    color: var(--color-text-quiet);
 }

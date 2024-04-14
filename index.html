@@ -15,6 +15,9 @@
 <body>
 <header>
     <nav id="top_navigation_bar">
+        <div id="nav_email">
+            <a href="mailto:johnrcd.ar@gmail.com" class="side_option">e: johnrcd.ar@gmail.com</a>
+        </div>
         <ul>
             <li><p>&#91;</p></li>
             <li><a href="#landing" >home,</a></li>
@@ -23,6 +26,9 @@
             <li><a href="#contact" >contact</a></li>
             <li><p>&#93;</p></li>
         </ul>
+        <div id="nav_twt">
+            <a href="https://twitter.com/john_rcd" class="side_option">@john_rcd</a>
+        </div>
     </nav>
 </header>
 <div class="page_container" id="page_root">
@@ -32,7 +38,7 @@
             class="screen_container_main_content"
             id="landing_content"
         >
-          <h1>Hey, I'm Rovi Decena.</h1>
+            <h1>Hey, I'm Rovi Decena.</h1>
             <p class="quiet_text">I write code for apps, websites, and games.</p>
             <h4 id="down_arrow">v</h4>
         </div>
@@ -46,7 +52,7 @@
             <div id="about_me_1">
                 <img id="about_me_selfie" src="images/rovi.jpg" alt="picture of me (rovi decena)">
             </div>
-            <div id="about_me_2" class="center_header_text">
+            <div id="about_me_2">
                 <h2>about me</h2>
                 <hr/>
                 <p>
@@ -151,13 +157,12 @@
                     />
                 </div>
                 <div class="project_card_content">
-                    <h3>Rovi's Taskboard</h3>
+                    <h3>The Taskboard</h3>
                     <hr/>
                     <p>
-                        Full stack web application to act as my personal to do
-                        list, but instead of being used solely by me, the board
-                        is populated by everyone else. Give project ideas,
-                        provide feedback, or simply just leave a comment.
+                        Full stack web application that acts as a ticket
+                        tracker for my projects. Submit bug reports, request
+                        new features, or give project ideas.
                     </p>
                     <br/>
                     <ul class="project_tech_list">
@@ -172,31 +177,53 @@
             </section>
         </div>
     </div>
+    <div id="contact"></div>
     <div class="screen_container">
         <div
+            id="contact_content"
             class="screen_container_main_content"
         >
+            <div id="contact_header">
+                <div>
+                    <h2>contact</h2>   
+                    <hr/>
+                </div>
+            </div>
+            <div>
+                <p>
+                    For inquiries, questions, or anything else, the best way to
+                    contact me is through my
+                    <a href="mailto:johnrcd.ar@gmail.com"><b>email</b></a>.
+                </p>
+                <br />
+                <p>> johnrcd.ar@gmail.com</p>
+                <br />
+                <p>Additionally, you can find me on social media, here:</p>
+                <br/>
+                <div class="social_media_icons">
+                    <a href="https://github.com/johnrcd" class="social_media_link">
+                        <img src="images/social_media_github.png" alt="github logo" class="social_media_icon"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rovi-decena/" class="social_media_link">
+                        <img src="images/social_media_linkedin.png" alt="linkedin logo" class="social_media_icon"/>
+                    </a>
+                    <a href="https://twitter.com/john_rcd" class="social_media_link">
+                        <img src=images/social_media_twitter.png alt="twitter logo" class="social_media_icon"/>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC4DSofCYni5blSEns_Vq3Ww" class="social_media_link">
+                        <img src="images/social_media_youtube.png" alt="youtube logo" class="social_media_icon"/>
+                    </a>
+                </div>
+                <!-- hack because the footer is positioned using absolute -->
+                <br/>
+                <br/> 
+                <br/>
+            </div>
         </div>
+        <footer>
+            <p>Built with vanilla HTML, CSS, and JS.</p>
+        </footer>
     </div>
-    <footer>
-        <p>Built using HTML and CSS.</p>
-        <p>Sometimes you just want something simple, y'know?</p>
-    </footer>
-    <h1>This is an h1 tag.</h1>
-    <h2>This is an h2 tag.</h2>
-    <h3>This is an h3 tag.</h3>
-    <h4>This is an h4 tag.</h4>
-    <p>This is a p tag.</p>
-    <ul>
-        <li>This is an unordered list element.</li>
-        <li>This is an unordered list element.</li>
-        <li>This is an unordered list element.</li>
-    </ul>
-    <ol>
-        <li>This is an ordered list element.</li>
-        <li>This is an ordered list element.</li>
-        <li>This is an ordered list element.</li>
-    </ol>
 </div>
 </body>
 </html>
