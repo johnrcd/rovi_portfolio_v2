@@ -95,6 +95,37 @@
     margin-right: calc(10px + 0.25rem);
 }
 
+@keyframes reveal {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes moveFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes moveFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
 @media (max-width:960px) {
     #top_navigation_bar .side_option{
         display: none;
@@ -204,17 +235,6 @@
     border: 2px solid var(--color-text-quiet);
 }
 
-@keyframes reveal {
-	from {
-		opacity: 0;
-		/* clip-path: inset(45% 20% 45% 20%); */
-	}
-	to {
-		opacity: 1;
-		/* clip-path: inset(0% 0% 0% 0%); */
-	}
-}
-
 .revealing_image {
 	/* Create View Timeline */
 	view-timeline-name: --revealing-image;
@@ -257,6 +277,12 @@
 #projects_header {
     display: flex;
     justify-content:center;
+    
+	view-timeline-name: --projects_header;
+	view-timeline-axis: block;
+	animation: linear reveal both;
+	animation-timeline: --projects_header;  
+    animation-range: entry 10% cover 80%;
 }
 #projects_header div{
     display: inline-block;
@@ -282,6 +308,41 @@
     -ms-transition:     0.2s linear; /* IE 10 */
     -moz-transition:    0.2s linear; /* Firefox */
     -webkit-transition: 0.2s linear; /* safari and chrome */
+
+    /* Create View Timeline
+    view-timeline-name: --project_cards;
+
+    /* Attach animation, linked to the  View Timeline */
+	/* animation: linear moveFromLeft both;
+	animation-timeline: --project_cards; */
+
+	/* Tweak range when effect should run*/
+	/* animation-range: entry 90% cover 69%; */
+}
+
+#projects_container .project_card{
+    /* Create View Timeline */
+    view-timeline-name: --project_cards;
+    animation-delay: 200ms;
+    --percent-differences: 20%;
+}
+
+/* animation range brute forced to work */
+
+#projects_container .project_card:nth-child(2) {
+    animation: ease-in-out moveFromLeft both;   
+    animation-timeline: --project_cards;
+    animation-range: entry-crossing 10% entry 350%;
+}
+#projects_container .project_card:nth-child(3) {
+    animation: ease-in-out moveFromRight both;
+    animation-timeline: --project_cards;
+    animation-range: entry-crossing 10% entry 250%;
+}
+#projects_container .project_card:nth-child(4) {
+    animation: ease-in-out moveFromLeft both;
+    animation-timeline: --project_cards;
+    animation-range: entry-crossing -10% entry 125%;
 }
 
 .project_card:hover {
@@ -291,7 +352,6 @@
     -moz-box-shadow:   inset 0px 0px 0px 2px var(--color-img-border);
     box-shadow:        inset 0px 0px 0px 2px var(--color-img-border);
 }
-/* .project_card: */
 
 .project_card .project_card_img {
     flex: 25;
@@ -309,23 +369,8 @@
 
 .flex_row_order_flip {
     flex-direction: row-reverse;
+    animation: linear moveFromRight both;
 }
-
-
-/* #about_me_content #about_me_1 {
-    flex: 33;
-    max-width: min(500px, 30vw);
-}
-
-#about_me_content #about_me_1 img {
-    padding: 0.625em;
-    border: 2px solid var(--color-text-quiet);
-}
-
-#about_me_content #about_me_2 {
-    flex: 66;
-} */
-
 
 .project_tech_list {
     display: flex;
@@ -343,11 +388,17 @@
     padding: 0.25rem;
 }
 
+@media (max-width:960px) {
+    /* DO NOT have animations on mobile */
+    /* hard to implement without breaking everything */
+    #projects_container .project_card {
+        animation: none !important;
+    }
 
-.project_tech_list li:not(:first-child) {
-    /* margin-left: 0.25rem; */
+    #projects_header {
+        animation: none: !important;
+    }
 }
-
 
 /* WINDOW 4 - CONTACT */
 
