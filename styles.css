@@ -210,6 +210,11 @@
     100% { opacity: 0; }
 }
 
+@media (max-width:960px) {
+    #down_arrow {
+        display: none
+    }
+}
 /* WINDOW 2 - ABOUT SCREEN */
 
 #about_me_content {
@@ -269,7 +274,6 @@
         margin: 0;
         margin-top: 2rem;
     }
-    
 }
 
 /* WINDOW 3 - PROJECTS */
